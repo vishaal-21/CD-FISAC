@@ -7,15 +7,16 @@ packages::= id import_list
 import_list::= . id import_list | .* | ε
 
 Start::= package_stmt import_stmt class_decl
-class-decl::= access_specifier modifier class class_name { m_class_members } class_more
+
+class_decl::= access_specifier modifier class class_name { m_class_members } class_more
+access_specifier::= public | private | protected | ε
+modifer::= static | final | abstract | ε
 m_class_members::= declaration main_func constructor functions
 class_more::= access_specifier modifier class class_name { class_members } class_more | ε
 class_name::= id
-access_specifier::= public | private | protected | ε
-modifer::= static | final | abstract | ε
-
 class_members::= declaration constructor functions
-functions::= acess_specifier modifier data_type id ( parameter_list ) { statement_list } functions | ε
+
+functions::= access_specifier modifier data_type id ( parameter_list ) { statement_list } functions | ε
 parameter_list::= data_type id id_list | ε
 id_list::= , data_type id id_list | ε
 constructor::= access_specifier class_name ( parameter_list ) { statement_list } constructor | ε
@@ -23,15 +24,17 @@ main_func::= public static void main ( String args[] ) { statement_list }
 data_type::= byte | short | int | long | float | double | char | boolean | void | String | class_name
 
 object_creation::= data_type id = new data_type ( parameters )
-parameters::= id id_list | ε
-param_list::= , id id_list | ε
+parameters::= id param_list | ε
+param_list::= , id param_list | ε
 
 statement_list::= statement statement_list | ε
 statement::= declaration | assign-stat; | looping | decision | object_creation | function_call | print
-declaration::= access_specifier modifier data_type decl_list; dclaration | ε
+
+declaration::= access_specifier modifier data_type decl_list; delaration | ε
 decl_list::= id decl_list_prime
-decl_list_prime::= , id decl_list | [number} decl_array | ε
+decl_list_prime::= , id decl_list | {number} decl_array | ε
 decl_array::= , decl_list | ε
+
 assign_stat::= id = expn 
 
 expn::= simple_expn  eprime
@@ -49,6 +52,7 @@ looping::=while(expn){statement_list} | for(assign_stat;expn;assign_stat){statem
 relop::= == | != | <= | >= | < | >
 addop::= + | -
 mullop::= * | / 
+
 print::= System.out.println(string_literal);
 string_literal::= set of characters enclosed by ""
 function_call::= fuction_name(parameters);

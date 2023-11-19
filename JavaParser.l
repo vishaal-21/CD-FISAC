@@ -7,8 +7,9 @@
 
 "package"    { return PACKAGE; }
 "import"     { return IMPORT; }
-"main"		{ return MAIN; }
+".*"        { return POINT; }
 "class"      { return CLASS; }
+"main"		{ return MAIN; }
 "public"     { return PUBLIC; }
 "private"    { return PRIVATE; }
 "protected"  { return PROTECTED; }
@@ -52,12 +53,12 @@
 ">"          { return GT; }
 "+"        { return PLUS; }
 "-"          { return MINUS; }
-".*"        { return POINT; }
 "*"        { return MULT; }
 "/"          { return DIV; }
-"\\[0-9]+"   { return NUMBER; }
+
+[-+]?[0-9]+([.][0-9]+)?  { return NUMBER; }
 [a-zA-Z_][a-zA-Z0-9_]* { return ID; }
-[ \t\n]+     ; /* skip whitespace */
+[ \t\n]+     ; 
 
 %%
 
