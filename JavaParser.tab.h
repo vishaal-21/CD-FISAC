@@ -80,12 +80,12 @@ extern int yydebug;
     WHILE = 281,                   /* WHILE  */
     FOR = 282,                     /* FOR  */
     PRINT = 283,                   /* PRINT  */
-    BOOLEAN_LITERAL = 284,         /* BOOLEAN_LITERAL  */
-    NULL_LITERAL = 285,            /* NULL_LITERAL  */
-    STRING_LITERAL = 286,          /* STRING_LITERAL  */
-    STRINGARGS = 287,              /* STRINGARGS  */
-    ID = 288,                      /* ID  */
-    NUMBER = 289,                  /* NUMBER  */
+    NULL_LITERAL = 284,            /* NULL_LITERAL  */
+    STRING_LITERAL = 285,          /* STRING_LITERAL  */
+    STRINGARGS = 286,              /* STRINGARGS  */
+    ID = 287,                      /* ID  */
+    NUMBER = 288,                  /* NUMBER  */
+    BOOLEAN_LITERAL = 289,         /* BOOLEAN_LITERAL  */
     EQ = 290,                      /* EQ  */
     NEQ = 291,                     /* NEQ  */
     LEQ = 292,                     /* LEQ  */
@@ -111,17 +111,7 @@ extern int yydebug;
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-union YYSTYPE
-{
-#line 27 "JavaParser.y"
-
-    char *string_value;
-    int int_value;
-
-#line 122 "JavaParser.tab.h"
-
-};
-typedef union YYSTYPE YYSTYPE;
+typedef int YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
 #endif

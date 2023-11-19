@@ -2,28 +2,28 @@ package com.example;
 
 import java.util.Scanner;
 
-public class JavaTest {
+public class JavaTest 
+{
+	int a;
 
-  public static void main(String[] args) {
-    System.out.println("Hello, world!");
 
-    int x = 10, i;
-    int y = 20;
+	public static void main() 
+	{
+		System.out.println("Hello, world!");
 
-    if (x < y) {
-      System.out.println("x is less than y");
-    } else {
-      System.out.println("x is greater than or equal to y");
-    }
+		int x = 10, i;
+		int y = 20;
 
-    for (i = 0; i < 5; i++) {
-      System.out.println("Iteration i");
-    }
+		if (x < y) {
+			System.out.println("x is less than y");
+		} else {
+			System.out.println("x is greater than or equal to y");
+		}
 
-    TestClass obj = new TestClass();
-  }
+		for (i = 0; i < 5; i++) {
+			System.out.println("Iteration i");
+		}
 
-  private void someMethod(int number, String text) {
-    number = number + 10;
-  }
+		TestClass obj = new TestClass();
+	}
 }
